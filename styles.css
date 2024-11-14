@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('assets/Fondito.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    overflow: hidden; /* Ocultar contenido desbordado */
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    width: 450px;
+    margin-top: 20px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-image: url('assets/back.png');
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    background-size: contain;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 28px;
+    user-select: none;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+   
+}
+
+.card .back-face {
+    background-color: #ccc;  /* Color de fondo por defecto si no quieres imagen */
+    background-size: cover;
+    transform: rotateY(180deg); /* El lado posterior comienza oculto */
+}
+
+.card .front-face {
+    background-color: #fff; /* Lado frontal, puede ser blanco o el color que desees */
+    background-size: cover;
+}
+.card.flipped {
+    background-color: #fff;
+    transform: rotateY(360deg);
+}
+
+/* Resto del estilo anterior */
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    display: none; /* Oculto por defecto */
+}
+
+.popup img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; /* Ajusta la imagen para que se vea completamente dentro del pop-up */
+    border-radius: 8px; /* Si quieres bordes redondeados */
+}
+
+/* estilos del Button */
+
+#restartButton {
+    background-color: #65B3E0; /* Color de fondo pastel */
+    color: #ffffff; /* Color de texto */
+    font-size: 1rem; /* Tamaño de fuente */
+    font-weight: bold;
+    padding: 10px 20px; /* Espaciado */
+    border: none;
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición para efectos */
+    margin-top: 20px;
+    outline: none;
+    margin-top: 20px;
+}
+
+#restartButton:hover {
+    background-color: #009fd9; /* Color al pasar el cursor */
+    transform: scale(1.05); /* Agranda ligeramente el botón */
+}
+
+#restartButton:active {
+    transform: scale(0.95); /* Efecto de presionado */
+    background-color: #026184;
+}
+ 
+/* Media query para pantallas verticales (resolución 1040 x 1920) */
+@media (max-width: 1040px) and (min-height: 1920px) {
+    .game-board {
+        grid-template-columns: repeat(4, 170px); /* Ajustar a 3 columnas */
+        grid-gap: 15px; /* Espacio entre cartas */
+        width: auto; /* Permite que se ajuste al contenido */
+        margin-top: 40px;
+    }
+
+    .card {
+        width: 170px;
+        height: 170px;
+        font-size: 2.5rem; /* Ajustar tamaño de fuente para que sea visible */
+    }
+
+    #restartButton {
+        font-size: 1.2rem;
+        padding: 12px 24px;
+        border-radius: 25px;
+    }
+
+    .popup {
+        font-size: 1.4rem;
+        padding: 25px 35px;
+    }
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(2, 120px); /* Ajusta a 2 columnas para móviles */
+        grid-gap: 10px; /* Espaciado entre las cartas */
+        width: auto;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 120px; /* Ajusta el ancho de las cartas para móviles */
+        height: 120px;
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño para caber en la pantalla */
+    }
+
+    #restartButton {
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+
+    .popup {
+        font-size: 1rem;
+        padding: 15px 25px;
+    }
+}
