@@ -139,7 +139,7 @@ body {
         flex-direction: column;
         padding: 10px;
         background-image: url('assets/Fondito.png');
-        background-size: contain;
+        background-size: cover;
     }
 
     .game-board {
