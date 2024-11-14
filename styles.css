@@ -138,30 +138,38 @@ body {
     body {
         flex-direction: column;
         padding: 10px;
+        background-image: url('assets/Fondito.png');
+        background-size: cover;
     }
 
     .game-board {
-        grid-template-columns: repeat(2, 120px); /* Ajusta a 2 columnas para móviles */
+        grid-template-columns: repeat(4, 60px); /* Ajusta a 2 columnas para móviles */
         grid-gap: 10px; /* Espaciado entre las cartas */
         width: auto;
         margin-top: 20px;
     }
 
     .card {
-        width: 120px; /* Ajusta el ancho de las cartas para móviles */
-        height: 120px;
-        font-size: 1.5rem; /* Tamaño de fuente más pequeño para caber en la pantalla */
+        width: 60px; /* Ajusta el ancho de las cartas para móviles */
+        height: 60px;
+        border-radius: 15px;
     }
 
-    #restartButton {
+        #restartButton {
         font-size: 1rem;
         padding: 10px 20px;
         border-radius: 20px;
         margin-top: 20px;
     }
-
+    
     .popup {
         font-size: 1rem;
         padding: 15px 25px;
+    }
+    .popup img {
+        max-width: 70%;
+        max-height: 70%;
+        object-fit: contain; /* Ajusta la imagen para que se vea completamente dentro del pop-up */
+        border-radius: 8px; /* Si quieres bordes redondeados */
     }
 }
