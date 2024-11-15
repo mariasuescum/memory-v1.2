@@ -129,8 +129,8 @@ function showPopup(image) {
     popup.style.display = "block";  // Muestra el pop-up
 
     setTimeout(() => {
-        popup.style.display = "none";  // Oculta el pop-up después de 6 segundos
-    }, 9000);
+        popup.style.display = "none";  // Oculta el pop-up después de 8 segundos
+    }, 8000);
 }
 
 // Inicia el juego mostrando el tablero
